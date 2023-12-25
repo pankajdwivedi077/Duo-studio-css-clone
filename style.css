@@ -10,6 +10,18 @@ html, body{
     width: 100%;
 }
 
+.cursor{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: fixed;
+    background-color: #EDBFFF;
+    z-index: 8;
+    mix-blend-mode: difference;
+    /* transition: left linear 0.1s top linear 0.1s; */
+}
+
+
 .main{
   background-color: #0F0D0D;
 }
@@ -18,6 +30,8 @@ html, body{
  min-height: 100vh;
  width: 100vw;
  /* background-color: red; */
+ position: relative;
+ z-index: 9;
 }
 
 #nav{
@@ -85,6 +99,8 @@ html, body{
     width: 100%;
     padding: px 5vw;
     border-bottom: 2px solid #626060;
+    position: relative;
+    z-index: 9;
 }
 
 .page2 h1{
@@ -136,11 +152,13 @@ width: 24%;
 }
 
 .page3{
-    min-height: 150vh;
+    min-height: 100vh;
     width: 100%;
     /* background-color: rebeccapurple; */
     position: relative;
+ z-index: 9;
     padding-top: 100px;
+
 }
 
 .page3 h1{
@@ -159,4 +177,63 @@ width: 24%;
 .page3-part1 img{
     height: 500px;
     margin-top: 100px;
+}
+
+.page4{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+    padding: 170px 100px;
+}
+
+.elem{
+    /* background-color: salmon; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.elem img{
+    position: absolute;
+    opacity: 0;
+    transition: all ease-out 0.5s;
+    transform: translateY(10%) rotate(2deg);
+
+}
+.elem img:nth-child(1) {
+    left: 0;
+}
+.elem img:nth-child(3) {
+    right: 5%;
+}
+
+.text-div{
+    /* background-color: lightskyblue; */
+    height: 138px;
+    overflow: hidden;
+}
+
+.elem h1{
+    font-size: 7vw;
+    transition: all ease-out 0.5s;
+}
+
+.elem:hover h1{
+    color: #EDBFFF;
+    transform: translateY(-100%);
+}
+
+.elem:hover img{
+  opacity: 1;
+  transform: translateY(0%) rotate(0deg);
+}
+
+.page5{
+    min-height: 100vh;
+    width: 100%;
+    background-color: red;
+    position: relative;
+    z-index: 9;
 }
