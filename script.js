@@ -36,9 +36,9 @@ init()
 
 var crsr = document.querySelector(".cursor")
 var main = document.querySelector(".main")
-main.addEventListener("mousemove", function(dets){
-    crsr.style.left = dets.x+"px"
-    crsr.style.top = dets.y+"px"
+document.addEventListener("mousemove", function(dets){
+    crsr.style.left = dets.x+ 20 +"px"
+    crsr.style.top = dets.y+ 20 +"px"
 })
 
 var tl = gsap.timeline({
@@ -93,4 +93,24 @@ var tl3 = gsap.timeline({
 
 tl3.to(".main", {
     backgroundColor: "#0F0D0D"
+})
+
+var boxes = document.querySelectorAll(".box")
+console.log(boxes)
+boxes.forEach(function(elem){
+  elem.addEventListener("mouseenter", function(){
+    // elem.style.backgroundColor = "red"
+    var att = elem.getAttribute("data-image")
+    crsr.style.width = "300px"
+    crsr.style.height = "250px"
+    crsr.style.borderRadius = "0"
+    crsr.style.backgroundImage = `url(${att})`
+  })
+  elem.addEventListener("mouseleave", function(){
+    elem.style.backgroundColor = "transparent"
+    crsr.style.width = "20px"
+    crsr.style.height = "20px"
+    crsr.style.borderRadius = "50%"
+    crsr.style.backgroundImage = `none`
+  })
 })
